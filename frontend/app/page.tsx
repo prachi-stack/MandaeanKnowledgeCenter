@@ -1,5 +1,8 @@
 import { Button } from "@/components/ui/button";
+import Homepage from "./homepage/page";
 
 export default function Home() {
-  return <div>Mandean Knowledge cente</div>;
+  return <div>
+    <Homepage />
+  </div>
 }
