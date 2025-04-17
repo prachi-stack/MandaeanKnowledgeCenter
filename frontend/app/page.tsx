@@ -1,5 +1,5 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
-  return <div>Mandean Knowledge center</div>;
+  return <div>Mandean Knowledge cente</div>;
 }
