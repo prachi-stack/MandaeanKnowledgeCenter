@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import Homepage from "./homepage/page";
+import Homepage from "./home/page";
 
 export default function Home() {
   return <div>
