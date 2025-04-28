@@ -1,10 +1,10 @@
-import HeroSection from "@/app/common/hero-section"
-import CategorySection from "@/app/home/components/category-section"
-import TrendingNow from "@/app/home/components/trending-now"
-import MostWatched from "@/app/home/components/most-watched"
-import Sidebar from "@/app/home/components/sidebar"
-import CommunityDiscussions from "@/app/home/components/community-discussion"
-import Footer from "@/app/common/footer"
+import HeroSection from "../common/hero-section"
+import CategorySection from "./components/category-section"
+import TrendingNow from "./components/trending-now"
+import MostWatched from "./components/most-watched"
+import Sidebar from "./components/sidebar"
+import CommunityDiscussions from "./components/community-discussion"
+import Footer from "../common/footer"
  
 const Homepage = () => {
   return (
