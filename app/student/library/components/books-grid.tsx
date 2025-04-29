@@ -14,7 +14,7 @@ type Book = {
     imageurl: string;
 }
 
-const bookDetails: Omit<Book, "imageUrl"> = {
+const bookDetails: Omit<Book, "imageurl"> = {
     title: "The Art of Programming",
     author: "Robert C. Martin"
 }
