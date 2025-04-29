@@ -1,7 +1,7 @@
 import { FileText, Download } from "lucide-react";
 export default function Document() {
   return (
-    <div className="max-w-3xl mx-auto bg-white rounded-xl space-y-4 mb-11">
+    <div className="mx-auto bg-white rounded-xl space-y-4 mb-11">
       <h2 className="text-lg font-semibold text-gray-900">Document</h2>
       <div className="border border-[#F3F3F5] bg-gray-50">
       <div className="flex items-center gap-4 px-4 rounded-lg ">

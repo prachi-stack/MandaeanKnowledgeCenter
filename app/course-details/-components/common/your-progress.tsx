@@ -4,7 +4,7 @@ import { Progress } from "@/components/ui/progress";
 
 export default function YourProgress() {
   return (
-    <div className="rounded-xl bg-white space-y-4 lg:min-w-md">
+    <div className="rounded-xl bg-white space-y-4">
       <h2 className="text-lg font-semibold text-gray-900">Your Progress</h2>
 
       <div>

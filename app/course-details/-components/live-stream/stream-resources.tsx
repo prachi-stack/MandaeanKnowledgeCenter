@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function StreamResources() {
   return (
-    <div className="max-w-3xl mx-auto bg-white rounded-xl space-y-4 mb-9">
+    <div className="mx-auto bg-white rounded-xl space-y-4 mb-9">
       <h2 className="text-lg font-semibold text-gray-900">Stream Resources</h2>
 
       <div className="flex items-center gap-4 p-4 rounded-lg border border-[#F3F3F5] bg-gray-50">

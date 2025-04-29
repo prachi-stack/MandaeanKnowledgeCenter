@@ -3,8 +3,8 @@ import { Button } from '@/components/ui/button'
 
 const CourseActions = () => {
   return (
-    <div className='space-y-5 lg:min-w-md'>
-      <h2 className='font-semibold text-xl'>Course Actions</h2>
+    <div className='space-y-5'>
+      <h2 className='font-semibold text-lg mt-2'>Course Actions</h2>
       <div className='flex flex-col space-y-3'>
       <Button  size="sm" className='bg-blue-500 text-white sm:px-8'>Schedule Meeting</Button>
       <Button variant="destructive" size="sm" className='bg-green-500 text-white sm:px-8'>Donate</Button>

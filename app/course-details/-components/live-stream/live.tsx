@@ -6,7 +6,7 @@ import LiveChat from "./live-chat"
 
 const Live = () => {
   return (  
-    <div className="space-y-9">
+    <div className="space-y-9 mt-4">
         <LiveStream />
         <LiveChat />
         <FormDiscussion />

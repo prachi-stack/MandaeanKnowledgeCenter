@@ -41,7 +41,7 @@ const messages: Message[] = [
 
 export default function LiveChat() {
   return (
-    <div className="max-w-3xl mx-auto bg-white space-y-4">
+    <div className="mx-auto bg-white space-y-4">
       <h2 className="text-lg font-semibold text-gray-900">Live Chat</h2>
 
       <div className="space-y-4">
