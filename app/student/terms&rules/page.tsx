@@ -1,0 +1,16 @@
+import HeroSection from "../common/hero-section"
+import Footer from "../common/footer"
+import TermsRules from "./components/page"
+const page = () => {
+  return (
+    <div>
+      <div className="px-11">
+      <HeroSection />
+        <TermsRules />
+      </div>
+      <Footer />
+    </div>
+  )
+}
+
+export default page
