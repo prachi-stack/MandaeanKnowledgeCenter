@@ -46,7 +46,7 @@ const BooksGrid = () => {
                 </div>
             </div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {books.map((book, idx) => (
                     <div key={idx} className="bg-white rounded-md shadow p-4">
                         <div className="relative h-64 w-full mb-4 rounded overflow-hidden">
