@@ -23,7 +23,7 @@ const TermsRules = () => {
                  
             </div>
             
-            <Image src="/termsRules.png" alt="terms&rules" width={1232} height={30} className="my-8" />
+            <Image src="/termsRules.png" alt="terms&rules" width={4000} height={30} className="my-8" />
         </div>
     )
 }

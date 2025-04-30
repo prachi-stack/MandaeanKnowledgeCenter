@@ -20,12 +20,12 @@ const trendingVideos: Video[] = new Array(6).fill({
 
 const TrendingNow = () => {
     return (
-        <div>
+        <div className="">
             <h2 className=" text-2xl mb-6">Trending Now</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 place-items-center gap-5" >
+            <div className="grid grid-cols-2 lg:grid-cols-3 place-items-center gap-5" >
                 {trendingVideos.map((video, index) => (
                     <div key={index}>
-                        <Image src={video.image} alt={video.title} width={240} height={136} className="rounded-lg" />
+                        <Image src={video.image} alt={video.title} width={240} height={40} className="rounded-lg" />
                         <div className="mt-2">
                             <Badge className="text-blue-700 bg-blue-100">{video.category}</Badge>
                             <h3 className="max-w-[10rem] mt-[5px]">{video.title}</h3>

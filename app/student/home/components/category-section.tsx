@@ -20,7 +20,7 @@ const categories: Category[] = [
 
 const CategorySection = () => {
   return (
-    <div className="flex flex-wrap  justify-center gap-2 sm:gap-4 my-12">
+    <div className="flex flex-wrap justify-center gap-2 sm:gap-4 my-12">
         {categories.map((cat, index) => (
           <Link href={cat.path} key={index}>
             <Button key={index} size="sm"  className="flex items-center gap-2 sm:px-3 border rounded-3xl">

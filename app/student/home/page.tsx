@@ -11,14 +11,14 @@ const Homepage = () => {
     <div>
       <div className="">
       <HeroSection />
-       <div className=" px-4 mx-3 sm:mx-5 md:mx-8"> 
+       <div className="px-4 mx-3 sm:mx-5 md:mx-8"> 
         <CategorySection />
-        <div className="flex flex-col lg:flex-row justify-between">
-            <div>
+        <div className="flex flex-col md:flex-row justify-center">
+            <div className="">
                 <TrendingNow />
                 <MostWatched />
             </div>
-            <div className="mt-5">
+            <div className="mt-5 ">
                 <Sidebar />
             </div>
         </div>

@@ -29,7 +29,7 @@ const libraryItems: LibraryItem[] = [
 const Sidebar = () => {
 
   return (
-    <div className=" w-full bg-white rounded-lg px-8 py-5 mt-[2.3rem]">
+    <div className="bg-white rounded-lg px-8 py-5 mt-[2.3rem]">
      <Search className="border-none shadow-none bg-gray-100" />
     <div className="mb-6">
       <h2 className="text-xl sm:text-2xl">Library</h2>
