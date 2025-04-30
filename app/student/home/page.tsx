@@ -13,7 +13,7 @@ const Homepage = () => {
       <HeroSection />
        <div className="px-4 mx-3 sm:mx-5 md:mx-8"> 
         <CategorySection />
-        <div className="flex flex-col md:flex-row justify-center">
+        <div className="flex flex-col md:flex-row justify-center space-x-3">
             <div className="">
                 <TrendingNow />
                 <MostWatched />
