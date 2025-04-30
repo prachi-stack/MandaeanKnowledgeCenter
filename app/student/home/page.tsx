@@ -11,7 +11,7 @@ const Homepage = () => {
     <div>
       <div className="">
       <HeroSection />
-      <div className=" px-4 mx-3 sm:mx-5 md:mx-8"> 
+       <div className=" px-4 mx-3 sm:mx-5 md:mx-8"> 
         <CategorySection />
         <div className="flex flex-col lg:flex-row justify-between">
             <div>

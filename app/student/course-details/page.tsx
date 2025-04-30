@@ -7,6 +7,7 @@ import Live from "./-components/live-stream/live"
 import CourseActions from "./-components/common/course-actions"
 import YourProgress from "./-components/common/your-progress"
 import Footer from "../common/footer"
+import CategorySection from "../home/components/category-section"
 
 const page = () => {
   const [tab, setTab] = useState("video")
@@ -14,6 +15,9 @@ const page = () => {
   return (
     <div>
       <HeroSection />
+      <div className="mx-4 px-3 sm:px-5 md:px-8">
+      <CategorySection />
+      </div>
       <div className="border-b border-gray-200 mt-4 flex gap-6 px-4 mx-3 sm:mx-5 md:mx-8">
         <button
           className={`pb-2 font-medium ${tab === "video" ? "border-b-2 border-blue-500 text-blue-600" : "text-gray-500"}`}

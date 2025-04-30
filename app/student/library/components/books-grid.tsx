@@ -71,7 +71,7 @@ const BooksGrid = () => {
                             </div>
 
                             <div className="mt-4 flex items-center justify-between">
-                                <Button size="sm" className="bg-blue-5 text-white sm:px-4">Preview</Button>
+                                <Button size="sm" className="bg-blue-500 text-white sm:px-4">Preview</Button>
                                 <div className="flex gap-4 text-gray-500">
                                     <Bookmark size={15} />
                                     <Share2 size={15} />

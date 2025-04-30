@@ -10,6 +10,7 @@ import ProfileStats from "./common/profile-status"
 import RecommendedCourses from "./common/recommended-next"
 import MyCourses from "./my-courses/my-courses"
 import UserCalender from "./upcoming/user-calender"
+import CategorySection from "../home/components/category-section"
 
 const Page = () => {
   const [activeTab, setActiveTab] = useState("myCourses")
@@ -33,7 +34,10 @@ const Page = () => {
   return (
     <div className="bg-gray-100">
       <HeroSection />
-      <div className="flex justify-between gap-4 px-7 sm:px-9 md:px-12 pt-4 pb-30 bg-gray-100 mt-5">
+      <div className="mx-4 px-3 sm:px-5 md:px-8">
+<CategorySection />
+      </div>
+       <div className="flex flex-col sm:flex-row justify-between gap-4 px-7 sm:px-9 md:px-12 pt-4 pb-30 bg-gray-100 mt-5">
         <div className="flex flex-col justify-start lg::w-1/5 space-y-3 max-w-sm">
           <UserProfile />
           {activeTab === "upcoming" ? (

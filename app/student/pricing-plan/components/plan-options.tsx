@@ -63,14 +63,14 @@ const PlanOptions = ({ isMonthly }: Props) => {
 
               </div>
               <hr className="border-gray-300 my-4" />
-              <ul className="space-y-2 text-gray-500 pl-5">
+              <div className="space-y-2 text-gray-500 pl-5 items-start">
                 {plan.features.map((feature, idx) => (
-                   <li key={idx} className="flex items-center space-x-2">
-                  <Plus className='text-brand-primary'/>
+                   <div key={idx} className="flex items-center ">
+                  <Plus className='w-10' />
                     <span>{feature}</span>
-                    </li>
+                    </div>
                 ))}
-              </ul>
+              </div>
               <hr className="border-gray-300 my-4" />
               <Button className="w-full my-7 bg-brand-primary rounded-full ">Choose Plan</Button>
             </div>

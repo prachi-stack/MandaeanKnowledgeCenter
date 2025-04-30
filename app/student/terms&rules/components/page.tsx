@@ -1,9 +1,11 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import CategorySection from "../../home/components/category-section"
 
 const TermsRules = () => {
     return (
         <div className="px-4 mx-3 sm:mx-5 md:mx-8">
+            <CategorySection />
             <div className="flex justify-center items-center">
             <Button size="sm" className="bg-[#2563EB] text-white sm:px-9 sm:py-7 rounded-full my-9">Terms & Rules</Button>
             </div>

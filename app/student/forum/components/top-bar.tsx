@@ -5,7 +5,7 @@ import { Heart, Plus } from 'lucide-react'
 const TopBar = () => {
   return (
     <div className='px-4 mx-3 sm:mx-5 md:mx-8 mt-4'>
-    <div className="flex items-center justify-between gap-4 pt-4">
+    <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4">
         <div className="flex-1">
             <Search className="rounded-md border-none bg-white shadow-none" placeholder='Search Here...' />
         </div>
