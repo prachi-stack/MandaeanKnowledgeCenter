@@ -1,10 +1,11 @@
 import * as React from "react"
+import Link from "next/link"
 import {
-  MoreHorizontalIcon,
+  MoreHorizontalIcon, ChevronLeft, ChevronRight
 } from "lucide-react"
 
 import { cn } from "@/lib/utils"
- 
+
 function Pagination({ className, ...props }: React.ComponentProps<"nav">) {
   return (
     <nav
@@ -24,7 +25,7 @@ function PaginationContent({
   return (
     <ul
       data-slot="pagination-content"
-      className={cn("flex flex-row items-center", className)}
+      className={cn("flex flex-row items-center ", className)}
       {...props}
     />
   )
@@ -39,8 +40,9 @@ function PaginationItem({
 
 type PaginationLinkProps = {
   isActive?: boolean
-} & Pick<React.ComponentProps<"a">, "href"> &
-  React.ComponentProps<"a">
+} & React.ComponentProps<typeof Link>
+
+
 
 function PaginationLink({
   className,
@@ -48,13 +50,13 @@ function PaginationLink({
   ...props
 }: PaginationLinkProps) {
   return (
-    <a
+    <Link
       aria-current={isActive ? "page" : undefined}
       data-slot="pagination-link"
       data-active={isActive}
       className={cn(
-        "px-3 py-2 text-sm text-gray-500 border border-gray-300 bg-white hover:bg-gray-100 focus:outline-none",
-        isActive ? "bg-sky-600 font-medium" : "",
+        "flex h-9 w-9 items-center justify-center text-[#3F3F44] border border-gray-300 bg-white hover:bg-gray-100 focus:outline-none",
+        isActive ? "font-semibold" : "",
         className
       )}
       {...props}
@@ -64,30 +66,34 @@ function PaginationLink({
 
 function PaginationPrevious({
   className,
+  isActive,
   ...props
 }: React.ComponentProps<typeof PaginationLink>) {
   return (
     <PaginationLink
       aria-label="Go to previous page"
-      className={cn("rounded-l-md text-gray-500 border border-gray-300", className)}
+      isActive={isActive}
+      className={cn(className)}
       {...props}
     >
-      Previous
+      <ChevronLeft size={16} />
     </PaginationLink>
   )
 }
 
 function PaginationNext({
   className,
+  isActive,
   ...props
 }: React.ComponentProps<typeof PaginationLink>) {
   return (
     <PaginationLink
       aria-label="Go to next page"
-      className={cn("rounded-r-md text-gray-500 border border-gray-300", className)}
+      isActive={isActive}
+      className={cn(className)}
       {...props}
     >
-      Next
+      <ChevronRight size={16} />
     </PaginationLink>
   )
 }

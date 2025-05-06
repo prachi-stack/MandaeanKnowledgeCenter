@@ -1,135 +1,276 @@
+ "use client"
 
+import { useState } from "react"
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Checkbox } from "@/components/ui/checkbox"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { CalendarIcon, CreditCard, Download, FileText } from "lucide-react"
 
-import { Button } from '@/components/ui/button';
-import Search from '@/components/ui/input-search';
-import { Checkbox } from '@/components/ui/checkbox';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu';
-import { Card } from '@/components/ui/card';
-import {
-  Download,
-  Calendar,
-  ChevronDown,
-  CreditCard,
-  ReceiptText,
-  Eye
-} from 'lucide-react';
+// Define order status types
+type OrderStatus = "In Progress" | "Completed" | "Cancelled"
 
-type Order = {
-  id: string;
-  status: 'In Progress' | 'Completed' | 'Cancelled';
-  price: string;
-  date: string;
-  method: 'Credit Card' | 'Paypal';
-};
+// Define order data structure
+interface Order {
+  id: string
+  status: OrderStatus
+  price: number
+  purchasedDate: string
+  paymentMethod: "Credit Card" | "Paypal"
+}
 
+// Sample order data
 const orders: Order[] = [
-  { id: 'ORD-2024-001', status: 'In Progress', price: '$99.99', date: 'Jan 15, 2024', method: 'Credit Card' },
-  { id: 'ORD-2024-002', status: 'Completed', price: '$99.99', date: 'Jan 15, 2024', method: 'Paypal' },
-  { id: 'ORD-2024-003', status: 'Cancelled', price: '$99.99', date: 'Jan 15, 2024', method: 'Credit Card' },
-  { id: 'ORD-2024-004', status: 'Completed', price: '$99.99', date: 'Jan 15, 2024', method: 'Credit Card' },
-];
+  {
+    id: "ORD-2024-001",
+    status: "In Progress",
+    price: 99.99,
+    purchasedDate: "Jan 15, 2024",
+    paymentMethod: "Credit Card",
+  },
+  { id: "ORD-2024-001", status: "Completed", price: 99.99, purchasedDate: "Jan 15, 2024", paymentMethod: "Paypal" },
+  {
+    id: "ORD-2024-001",
+    status: "Cancelled",
+    price: 99.99,
+    purchasedDate: "Jan 15, 2024",
+    paymentMethod: "Credit Card",
+  },
+  {
+    id: "ORD-2024-001",
+    status: "Completed",
+    price: 99.99,
+    purchasedDate: "Jan 15, 2024",
+    paymentMethod: "Credit Card",
+  },
+  {
+    id: "ORD-2024-001",
+    status: "Completed",
+    price: 99.99,
+    purchasedDate: "Jan 15, 2024",
+    paymentMethod: "Credit Card",
+  },
+  {
+    id: "ORD-2024-001",
+    status: "Completed",
+    price: 99.99,
+    purchasedDate: "Jan 15, 2024",
+    paymentMethod: "Credit Card",
+  },
+  {
+    id: "ORD-2024-001",
+    status: "Completed",
+    price: 99.99,
+    purchasedDate: "Jan 15, 2024",
+    paymentMethod: "Credit Card",
+  },
+  {
+    id: "ORD-2024-001",
+    status: "Completed",
+    price: 99.99,
+    purchasedDate: "Jan 15, 2024",
+    paymentMethod: "Credit Card",
+  },
+]
 
-export default function OrderHistoryPage() {
+export default function OrderHistory() {
+  const [selectedOrders, setSelectedOrders] = useState<string[]>([])
+
+  // Handle checkbox selection
+  const toggleOrderSelection = (orderId: string) => {
+    setSelectedOrders((prev) => (prev.includes(orderId) ? prev.filter((id) => id !== orderId) : [...prev, orderId]))
+  }
+
+  // Handle select all checkbox
+  const toggleSelectAll = () => {
+    if (selectedOrders.length === orders.length) {
+      setSelectedOrders([])
+    } else {
+      setSelectedOrders(orders.map((order) => order.id))
+    }
+  }
+
+  // Get status color based on status
+  const getStatusColor = (status: OrderStatus) => {
+    switch (status) {
+      case "In Progress":
+        return "text-amber-500"
+      case "Completed":
+        return "text-green-500"
+      case "Cancelled":
+        return "text-red-500"
+      default:
+        return ""
+    }
+  }
+
+  // Get status dot color based on status
+  const getStatusDot = (status: OrderStatus) => {
+    switch (status) {
+      case "In Progress":
+        return "bg-amber-500"
+      case "Completed":
+        return "bg-green-500"
+      case "Cancelled":
+        return "bg-red-500"
+      default:
+        return ""
+    }
+  }
+
+  // Get payment method icon
+  const getPaymentIcon = (method: "Credit Card" | "Paypal") => {
+    if (method === "Credit Card") {
+      return <CreditCard className="h-5 w-5 text-gray-500" />
+    } else {
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="h-5 w-5 text-gray-500"
+        >
+          <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+          <rect width="18" height="12" x="3" y="11" rx="2" />
+        </svg>
+      )
+    }
+  }
+
   return (
-    <div className="px-4 py-8 mx-3 sm:mx-5 md:mx-8 space-y-6">
-      <div className='flex flex-col sm:flex-row items-center justify-between'>
+    <div className="container mx-auto py-8 px-4">
+      <div className="flex justify-between items-start mb-4">
         <div>
-          <h2 className="text-2xl font-semibold">Order History</h2>
-          <p className="text-sm text-muted-foreground my-4 max-w-xl">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.
+          <h1 className="text-2xl font-bold mb-2">Order History</h1>
+          <p className="text-gray-500 max-w-xl">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text.
           </p>
         </div>
-        <Button variant="outline">
-          <Download className="w-4 h-4 mr-2" />
-          Download All
+        <Button variant="outline" className="flex items-center gap-2">
+          <Download className="h-4 w-4" />
+          <span>Download All</span>
         </Button>
       </div>
 
-      <div className="flex justify-between my-9">
-        <div className="flex flex-wrap gap-2">
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="outline">
-                <Calendar className="w-4 h-4 mr-2" />
-                Date Range
-                <ChevronDown className="ml-1 w-4 h-4" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuItem>This Month</DropdownMenuItem>
-              <DropdownMenuItem>Last 30 Days</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+      <div className="flex justify-between items-center my-6 gap-4">
+        <div className="flex gap-4">
+          <div className="relative">
+            <Select>
+              <SelectTrigger className="w-[180px] pl-9 bg-white">
+                <SelectValue placeholder="Date Range" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="today">Today</SelectItem>
+                <SelectItem value="yesterday">Yesterday</SelectItem>
+                <SelectItem value="week">This Week</SelectItem>
+                <SelectItem value="month">This Month</SelectItem>
+                <SelectItem value="year">This Year</SelectItem>
+              </SelectContent>
+            </Select>
+            <CalendarIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-500" />
+          </div>
 
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="outline">
-                Status
-                <ChevronDown className="ml-1 w-4 h-4" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuItem>In Progress</DropdownMenuItem>
-              <DropdownMenuItem>Completed</DropdownMenuItem>
-              <DropdownMenuItem>Cancelled</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <div className="relative">
+            <Select>
+              <SelectTrigger className="w-[180px] bg-white">
+                <SelectValue placeholder="Status" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All</SelectItem>
+                <SelectItem value="in-progress">In Progress</SelectItem>
+                <SelectItem value="completed">Completed</SelectItem>
+                <SelectItem value="cancelled">Cancelled</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
         </div>
-        <Search placeholder="Search..." className="lg:w-[43rem]" />
+
+        <div className="relative w-full max-w-md">
+          <Input type="text" placeholder="Search" className="pl-10 bg-white" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            />
+          </svg>
+        </div>
       </div>
 
-      
-      <div className="space-y-4">
-        
-        <div className="hidden sm:grid grid-cols-5 px-4 text-sm font-semibold text-muted-foreground">
-          <div>Order ID</div>
-          <div>Status</div>
-          <div>Price & Purchased On</div>
-          <div>Payment Method</div>
-          <div className="text-right">Actions</div>
-        </div>
-
-        {/* Data Rows */}
-        {orders.map((order, index) => (
-          <Card key={index} className="p-4 sm:grid grid-cols-5 gap-4 items-center">
-            <div className="flex sm:items-start items-center gap-3">
-              <Checkbox />
-              <div>
-                <div className="font-medium">{order.id}</div>
-              </div>
-            </div>
-
-            <div className={`text-sm font-semibold ${order.status === 'Completed' ? 'text-green-600' : order.status === 'In Progress' ? 'text-yellow-600' : 'text-red-600'}`}>
-              {order.status}
-            </div>
-
-            <div className='flex flex-col items-center sm:items-start'>
-              <div className="text-sm font-medium">{order.price}</div>
-              <div className="text-xs text-muted-foreground">Purchased {order.date}</div>
-            </div>
-
-            <div className="flex items-center gap-1 text-sm">
-              <CreditCard className="w-4 h-4" />
-              {order.method}
-            </div>
-
-            <div className="flex justify-end gap-2">
-            <Button variant="outline" size="sm" className='px-2 sm:px-4'>
-          <Download className="mr-2" />
-          Invoice
-        </Button>
-              <Button size="sm" variant="outline" className='bg-blue-400 px-2 sm:px-4'>
-                 View Course
-              </Button>
-            </div>
-          </Card>
-        ))}
+      <div className="border rounded-lg overflow-hidden">
+        <Table>
+          <TableHeader>
+            <TableRow className="bg-white border-b">
+              <TableHead className="w-[50px]">
+                <Checkbox
+                  checked={selectedOrders.length === orders.length && orders.length > 0}
+                  onCheckedChange={toggleSelectAll}
+                />
+              </TableHead>
+              <TableHead>Order ID</TableHead>
+              <TableHead>Status</TableHead>
+              <TableHead>Price & Purchased On</TableHead>
+              <TableHead>Payment Method</TableHead>
+              <TableHead>Actions</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {orders.map((order, index) => (
+              <TableRow key={index} className="bg-white">
+                <TableCell>
+                  <Checkbox
+                    checked={selectedOrders.includes(order.id)}
+                    onCheckedChange={() => toggleOrderSelection(order.id)}
+                  />
+                </TableCell>
+                <TableCell className="font-medium">{order.id}</TableCell>
+                <TableCell>
+                  <div className="flex items-center gap-2">
+                    <div className={`h-2 w-2 rounded-full ${getStatusDot(order.status)}`} />
+                    <span className={getStatusColor(order.status)}>{order.status}</span>
+                  </div>
+                </TableCell>
+                <TableCell>
+                  <div>
+                    <div className="font-medium">${order.price.toFixed(2)}</div>
+                    <div className="text-sm text-gray-500">Purchased {order.purchasedDate}</div>
+                  </div>
+                </TableCell>
+                <TableCell>
+                  <div className="flex items-center gap-2">
+                    {getPaymentIcon(order.paymentMethod)}
+                    <span className="text-gray-600">{order.paymentMethod}</span>
+                  </div>
+                </TableCell>
+                <TableCell>
+                  <div className="flex items-center gap-2">
+                    <Button variant="ghost" size="sm" className="flex items-center gap-1 text-gray-500">
+                      <FileText className="h-4 w-4" />
+                      <span>Invoice</span>
+                    </Button>
+                    <Button size="sm" className="bg-blue-500 hover:bg-blue-600 text-white">
+                      View Course
+                    </Button>
+                  </div>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
       </div>
     </div>
-  );
+  )
 }

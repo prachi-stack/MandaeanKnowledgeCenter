@@ -1,27 +1,52 @@
+"use client"
+
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import HeroSection from "../../common/hero-section"
 import Image from "next/image"
-import Login from "./components/login"
+import Login from "../login/page"
+import RegisterForm from "../signup/page"
+import ForgotPasswordPage from "../login/components/forgot-password"
+import VerifyOTPPage from "../login/components/verify-otp"
 import { Play, ChevronLeft, ChevronRight } from "lucide-react"
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
+import { Dialog, DialogTitle, DialogContent, } from "@/components/ui/dialog"
+import SetPasswordPage from "../login/components/set-password"
+import SuccessPage from "../login/components/success-page"
 
-const page = () => {
+type ModalState = "none" | "login" | "signup" | "forgot" | "otp" | "set-password" | "success"
+
+const BeforeLogin = () => {
+    const [modal, setModal] = useState<ModalState>("none")
+
     return (
         <div>
             <HeroSection />
             <div className="px-4 mx-3 sm:mx-5 md:mx-8 mt-8">
                 <div className="flex items-center justify-between font-medium">
-                <Dialog>
-             <DialogTrigger asChild>
-              <Button size="sm" className="rounded-full bg-sky-600 text-white sm:px-5 sm:py-4">
-                Sign In
-              </Button>
-            </DialogTrigger>
-            <DialogContent  className="max-w-sm rounded-md bg-white border-none">
-            <Login />
-            </DialogContent>
-            
-          </Dialog>
+
+                    <Button onClick={() =>setModal("login")} size="sm" className="rounded-full bg-sky-600 text-white sm:px-5 sm:py-4">
+                        Sign In
+                    </Button>
+                    <Dialog open={modal !== "none"} onOpenChange={() => setModal("none")}>
+                        <DialogContent className="w-md p-0 bg-white border-none shadow-none">
+                        <DialogTitle className="sr-only">Authentication Modal</DialogTitle>
+                            {modal === "login" && (
+                                <Login switchToSignup={() => setModal("signup")} switchToForgot={() => setModal("forgot")} />
+                            )}
+                            {modal === "signup" && (
+                                <RegisterForm switchToLogin={() => setModal("login")} />
+                            )}
+                            {modal === "forgot" && (
+                                <ForgotPasswordPage switchToOTP={() => setModal("otp")} />
+                            )}
+                            {modal === "otp" && (
+                                <VerifyOTPPage onClose={() => setModal("set-password")} />
+                            )}
+                            {modal === "set-password" && <SetPasswordPage switchToSuccess={() => setModal("success")} />}
+                            {modal === "success" && <SuccessPage backToLogin={() => setModal("login")} />}
+                        </DialogContent>
+                    </Dialog>
+
                     <div className="flex space-x-2">
                         <Button size="sm" className="rounded-full bg-green-500 sm:px-7 sm:py-5 text-white">Donate</Button>
                         <Button size="sm" className="rounded-full sm:px-7 sm:py-5 border border-gray-200">Contact</Button>
@@ -67,4 +92,4 @@ const page = () => {
     )
 }
 
-export default page
+export default BeforeLogin

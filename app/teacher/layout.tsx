@@ -7,7 +7,7 @@ export default function TeacherLayout({ children }: { children: React.ReactNode 
       <Sidebar />
       <div className="flex flex-col flex-1">
         <Topbar />
-        <main className="p-6">
+        <main className="p-5">
           {children}
         </main>
       </div>

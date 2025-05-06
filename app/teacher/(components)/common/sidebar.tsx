@@ -6,20 +6,20 @@ import { cn } from "@/lib/utils";
 import { LayoutDashboard, CalendarDays, MessageSquareMore, BookText, ChartSpline, Star, User } from "lucide-react";
 
 const teacherLinks = [
-  { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard},
-  { name: "My Schedule", href: "/my-schedule", icon: CalendarDays },
-  { name: "Messages", href: "/message", icon: MessageSquareMore },
-  { name: "My Course", href: "/my-course", icon: BookText },
-  { name: "My Status", href: "/my-status", icon: ChartSpline },
-  { name: "Reviews", href: "/reviews", icon: Star },
-  { name: "My Accounts", href: "/my-accounts", icon: User },
+  { name: "Dashboard", href: "/teacher/dashboard", icon: LayoutDashboard},
+  { name: "My Schedule", href: "/teacher/my-schedule", icon: CalendarDays },
+  { name: "Messages", href: "/teacher/message", icon: MessageSquareMore },
+  { name: "My Course", href: "/teacher/my-course", icon: BookText },
+  { name: "My Status", href: "/teacher/my-status", icon: ChartSpline },
+  { name: "Reviews", href: "/teacher/reviews", icon: Star },
+  { name: "My Accounts", href: "/teacher/my-account", icon: User },
 ];
 
 export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <div className="w-64 h-screen bg-white shadow-md border-r flex flex-col items-center">
+    <div className="w-55 h-screen bg-white shadow-md border-r border-gray-200 flex flex-col items-center">
       <div className="p-6 font-bold text-xl text-blue-600">
         Xcrino
       </div>

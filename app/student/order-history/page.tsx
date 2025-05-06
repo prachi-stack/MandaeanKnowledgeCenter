@@ -1,8 +1,13 @@
  import React from 'react'
+import OrderHistory from './components/order-history'
+import HeroSection from '../common/hero-section'
  
  const page = () => {
    return (
-     <div>page</div>
+     <div>
+      <HeroSection />
+      <OrderHistory />
+     </div>
    )
  }
  

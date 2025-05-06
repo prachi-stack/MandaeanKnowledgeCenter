@@ -1,0 +1,14 @@
+const page = () => {
+  return (
+    <div className='flex space-x-8'>
+      <div className='flex-[2] flex flex-col space-y-[3rem]'>
+         
+      </div>
+      <div className='flex-[1] flex flex-col space-y-4'>
+         
+     </div>
+    </div>
+  )
+}
+
+export default page
