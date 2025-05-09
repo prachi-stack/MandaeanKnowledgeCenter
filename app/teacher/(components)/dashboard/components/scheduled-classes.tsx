@@ -50,7 +50,7 @@ export default function ScheduleClasses() {
 
         {allDays.map((day, index) => {
           // Get day of month as a number directly, not as a string
-          const dayNumber = day.getDate() // This returns a number directly
+          const dayNumber = Number(day.getDate()) // This returns a number directly
           return (
             <div
               key={index}
