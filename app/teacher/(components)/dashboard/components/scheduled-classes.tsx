@@ -1,7 +1,7 @@
- "use client"
+"use client"
 
 import { useState } from "react"
-import { CalendarIcon } from "lucide-react"
+import { CalendarIcon, ChevronDown } from "lucide-react"
 import {
   format,
   startOfMonth,
@@ -9,6 +9,15 @@ import {
   eachDayOfInterval,
   getDay,
 } from "date-fns"
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 
 export default function ScheduleClasses() {
   const [currentDate] = useState(new Date(2021, 9, 1)) // October 1, 2021
@@ -18,13 +27,25 @@ export default function ScheduleClasses() {
 
   const allDays = eachDayOfInterval({ start: monthStart, end: monthEnd })
 
-  // Add leading empty cells for the first week
-  const startWeekday = getDay(monthStart) // 0 (Sun) - 6 (Sat)
+   const startWeekday = getDay(monthStart) // 0 (Sun) - 6 (Sat)
   const leadingEmptyCells = Array.from({ length: startWeekday })
 
   return (
     <div className="w-full rounded-lg">
-      <h1 className="text-lg text-neutral-800 font-semibold mb-3">Scheduled Classes</h1>
+      <div className="flex items-center justify-between mb-3">
+        <h1 className="text-lg text-neutral-800 font-semibold">Scheduled Classes</h1>
+        <Select defaultValue="today">
+      <SelectTrigger className="border-none text-gray-600">
+        <SelectValue placeholder="select day" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectGroup>
+          <SelectLabel></SelectLabel>
+          <SelectItem value="today">Today</SelectItem>
+        </SelectGroup>
+      </SelectContent>
+    </Select>
+       </div>
       <div className="flex items-center gap-2 mb-4">
         <CalendarIcon className="h-5 w-5 text-green-500" />
         <h2 className="text-lg font-medium text-neutral-800">
