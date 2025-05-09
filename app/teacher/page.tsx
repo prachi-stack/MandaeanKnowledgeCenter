@@ -1,8 +1,11 @@
 import React from 'react'
+import SignupForm from './auth/signup/page'
 
 const page = () => {
   return (
-    <div>page</div>
+    <div className='container'>
+      <SignupForm />
+    </div>
   )
 }
 

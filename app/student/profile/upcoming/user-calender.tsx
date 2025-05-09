@@ -1,7 +1,7 @@
 'use client'
 
 import React, {useState} from 'react'
-import { Calendar } from "@/components/ui/calendar"
+import Calendar from '@/components/ui/calendar'
 import NextClass from './next-class'
 
 

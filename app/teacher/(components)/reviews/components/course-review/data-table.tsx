@@ -95,9 +95,9 @@ export default function DataTable<TData, TValue>({
 
       <div>
         <Table>
-          <TableHeader>
+          <TableHeader className=" bg-[#F6F6F6] rounded-lg border-none" >
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id}>
+              <TableRow key={headerGroup.id} className="border-none">
                 {headerGroup.headers.map((header) => {
                   return (
                     <TableHead key={header.id} colSpan={header.colSpan}>
@@ -120,8 +120,8 @@ export default function DataTable<TData, TValue>({
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
-                  className={index % 2 === 0 ? "bg-gray-50" : ""}
-                >
+                  className={`border-none ${index % 2 === 0 ? "bg-gray-50" : ""}`}
+                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</TableCell>
                   ))}

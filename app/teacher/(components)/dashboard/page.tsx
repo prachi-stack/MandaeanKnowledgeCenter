@@ -22,7 +22,7 @@ const page = () => {
           </div>
         </div>
       </div>
-      <div className='flex-[1] flex flex-col space-y-4'>
+      <div className='flex-[1] flex flex-col space-y-9'>
         <TotalCourses />
         <TopPerformCourse />
         <TopStudentLocation />

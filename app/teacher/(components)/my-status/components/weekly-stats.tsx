@@ -10,7 +10,7 @@ export default function WeeklyStatistic() {
   ]
 
   return (
-    <Card className="w-full max-w-md rounded-2xl shadow p-4 border-none">
+    <Card className="w-full rounded-2xl p-4 border-none shadow-none">
       <div className="flex items-center justify-between mb-4">
         <h1 className="text-lg font-semibold">Weekly Statistic</h1>
         <MoreVertical className="text-gray-500" />

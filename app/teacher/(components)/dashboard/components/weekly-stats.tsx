@@ -30,7 +30,7 @@ const courses: Course[] = [
 
 const WeeklyStats = () => {
   return (
-    <div className="bg-white p-4 rounded-xl shadow-sm">
+    <div className="bg-white p-4 rounded-xl">
       <h1 className="text-lg font-semibold mb-4">Weekly Sales Stats</h1>
       <div>
          <div className="flex justify-between items-center bg-gray-100 p-3 rounded-md mb-2">

@@ -7,7 +7,7 @@ import { LayoutDashboard, CalendarDays, MessageSquareMore, BookText, ChartSpline
 
 const teacherLinks = [
   { name: "Dashboard", href: "/teacher/dashboard", icon: LayoutDashboard},
-  { name: "My Schedule", href: "/teacher/my-schedule", icon: CalendarDays },
+  { name: "My Schedule", href: "/teacher/schedule", icon: CalendarDays },
   { name: "Messages", href: "/teacher/message", icon: MessageSquareMore },
   { name: "My Course", href: "/teacher/my-course", icon: BookText },
   { name: "My Status", href: "/teacher/my-status", icon: ChartSpline },
@@ -19,12 +19,12 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <div className="w-55 h-screen bg-white shadow-md border-r border-gray-200 flex flex-col items-center">
+    <div className="w-55 bg-white shadow-md border-r border-gray-200 flex flex-col items-center">
       <div className="p-6 font-bold text-xl text-blue-600">
         Xcrino
       </div>
 
-      <div className="flex flex-col p-4 space-y-5">
+      <div className="flex flex-col p-4 space-y-10">
         {teacherLinks.map((link) => {
           const Icon = link.icon
           return (

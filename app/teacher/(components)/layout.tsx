@@ -1,5 +1,5 @@
-import Sidebar from "./(components)/common/sidebar";
-import Topbar from "./(components)/common/topbar";
+import Sidebar from "./common/sidebar";
+import Topbar from "./common/topbar";
 
 export default function TeacherLayout({ children }: { children: React.ReactNode }) {
   return (

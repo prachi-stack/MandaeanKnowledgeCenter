@@ -102,11 +102,11 @@ export const columns: ColumnDef<CourseReview>[] = [
             {Array.from({ length: 5 }).map((_, i) => (
               <Star
                 key={i}
-                className={cn("h-4 w-4", i < row.original.rating ? "text-blue-500 fill-blue-500" : "text-gray-300")}
+                className={cn("h-4 w-4 mt-6", i < row.original.rating ? "text-blue-500 fill-blue-500" : "text-gray-300")}
               />
             ))}
           </div>
-          <p className="text-sm text-gray-500 whitespace-normal">{row.original.reviewText}</p>
+          <p className="text-xs text-gray-500 whitespace-normal">{row.original.reviewText}</p>
         </div>
       )
     },
@@ -146,9 +146,9 @@ export default function CourseReviewsTable() {
   })
 
   return (
-    <div className="max-w-xl">
+    <div className="">
       <div className="rounded-md">
-        <div className="flex items-center justify-between border-b px-4 py-4">
+        <div className="flex items-center justify-between py-4">
           <h2 className="text-lg font-semibold">Course Reviews</h2>
           <div className="flex items-center gap-2">
             <Button variant="outline" size="sm" className="h-8 text-gray-400 font-normal border-none">

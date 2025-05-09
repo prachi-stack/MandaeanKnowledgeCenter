@@ -10,7 +10,7 @@ import {
   getDay,
 } from "date-fns"
 
-export default function ScheduleClasses() {
+export default function Calendar() {
   const [currentDate] = useState(new Date(2021, 9, 1)) // October 1, 2021
 
   const monthStart = startOfMonth(currentDate)
@@ -24,7 +24,6 @@ export default function ScheduleClasses() {
 
   return (
     <div className="w-full rounded-lg">
-      <h1 className="text-lg text-neutral-800 font-semibold mb-3">Scheduled Classes</h1>
       <div className="flex items-center gap-2 mb-4">
         <CalendarIcon className="h-5 w-5 text-green-500" />
         <h2 className="text-lg font-medium text-neutral-800">
@@ -44,13 +43,12 @@ export default function ScheduleClasses() {
         {leadingEmptyCells.map((_, i) => (
           <div
             key={`empty-${i}`}
-            className="border-r border-b border-gray-200 p-2"
+            className="border-r border-b border-gray-200 min-h-[100px] p-2"
           />
         ))}
 
         {allDays.map((day, index) => {
-          // Get day of month as a number directly, not as a string
-          const dayNumber = day.getDate() // This returns a number directly
+          const dayNumber = format(day, "d")
           return (
             <div
               key={index}

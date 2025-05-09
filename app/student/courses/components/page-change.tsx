@@ -27,7 +27,7 @@ const PaginatedControl = ({ className }: PaginatedControlProps) => {
     <Pagination  className={` ${className}`} >
       <PaginationContent>
         <PaginationItem>
-          <PaginationPrevious
+          <PaginationPrevious href="#"
             onClick={() => handlePageClick(currentPage - 1)}
             aria-disabled={currentPage === 1}
             className={currentPage === 1 ? "pointer-events-none opacity-50" : ""}
@@ -50,7 +50,7 @@ const PaginatedControl = ({ className }: PaginatedControlProps) => {
         })}
 
         <PaginationItem>
-          <PaginationNext
+          <PaginationNext href="#"
             onClick={() => handlePageClick(currentPage + 1)}
             aria-disabled={currentPage === totalPages}
             className={currentPage === totalPages ? "pointer-events-none opacity-50" : ""}

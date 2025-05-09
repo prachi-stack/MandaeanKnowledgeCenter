@@ -30,9 +30,9 @@ const course: courseInfo[]= [
 
 const  TopPerformCourse = () => {
   return (
-    <div className="shadow-md p-2">
+    <div className="shadow rounded py-4 px-2">
         <h1 className="mb-4">Top Performing Course</h1>
-        <div>
+        <div className="space-y-4">
             {course.map((c, idx) => (
                 <div key={idx} className="flex items-center justify-between space-y-3">
                     <div className="flex space-x-3">
