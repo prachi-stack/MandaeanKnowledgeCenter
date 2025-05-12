@@ -20,20 +20,20 @@ export default function TopStudentLocation() {
       </ div>
       <div className="space-y-4">
         {studentData.map((location) => (
-          <div key={location.country} className="h-5 flex justify-between space-x-4">
-            <div className="h-full bg-gradient-to-r from-white to-[#CCEABB] rounded-md flex items-center justify-between min-w-fit px-1 space-x-3"
+          <div key={location.country} className="h-7 flex justify-between space-x-4">
+            <div className="h-full bg-gradient-to-r from-white to-[#CCEABB] rounded-md flex items-center justify-between min-w-fit pr-3 space-x-3"
               style={{ width: `${location.percentage * 3}%`, maxWidth:"100%" }} >
               <div className="flex items-center gap-2">
                   <Image size={14}  />
-                <span className="text-[8px] text-gray-700 whitespace-nowrap">{location.country}</span>
+                <span className="text-[10px] text-gray-700 whitespace-nowrap">{location.country}</span>
               </div>
               <div className="flex items-center gap-1">
-                  <Users className="h-2 w-2 text-gray-600" />
-                  <span className="text-[6px] font-medium">{location.count.toLocaleString()}</span>
+                  <Users className="h-2 w-3 text-gray-600" />
+                  <span className="text-[8px] font-medium">{location.count.toLocaleString()}</span>
                 </div>
             </div>
                <div className="h-full flex items-center">
-                <span className="text-[8px] text-gray-500">{location.percentage}%</span>
+                <span className="text-[10px] text-gray-500">{location.percentage}%</span>
               </div>
             </div>
         ))}
