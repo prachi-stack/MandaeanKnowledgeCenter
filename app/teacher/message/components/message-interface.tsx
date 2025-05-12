@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState } from "react"
-import { CheckCheck, Heart, Image, ImageIcon, MoreVertical, Paperclip, Search, SmilePlus } from "lucide-react"
+import { AlignJustify, CheckCheck, Heart, Image, ImageIcon, MoreVertical, Paperclip, Search, SmilePlus } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { cn } from "@/lib/utils"
@@ -171,26 +171,12 @@ export default function MessageInterface() {
           <div className="flex items-center gap-3">
             {isMobile && (
               <Button variant="ghost" size="icon" onClick={toggleSidebar} className="mr-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <line x1="3" y1="12" x2="21" y2="12" />
-                  <line x1="3" y1="6" x2="21" y2="6" />
-                  <line x1="3" y1="18" x2="21" y2="18" />
-                </svg>
+                <AlignJustify />
               </Button>
             )}
             <Image />
             <div>
-              <div className="font-medium">{activeContact.name}</div>
+              <div className="font-medium text-sm text-neutral-800">{activeContact.name}</div>
               <div className="flex items-center">
                 <div className="h-2 w-2 rounded-full bg-green-500 mr-2"></div>
                 <span className="text-sm text-gray-500">Online</span>
@@ -209,7 +195,7 @@ export default function MessageInterface() {
               <div className="flex flex-col max-w-[80%]">
                 <div
                   className={cn(
-                    "rounded-lg p-3 inline-block",
+                    "rounded-lg p-2 inline-block text-sm",
                     message.isCurrentUser ? "bg-gray-700 text-white" : "bg-gray-100 text-gray-800",
                   )}
                 >
@@ -289,9 +275,9 @@ function ContactItem({
       <Image />
       <div className="flex-1 min-w-0">
         <div className="flex items-center justify-between">
-          <div className="font-medium truncate">{contact.name}</div>
+          <div className="text-xs font-medium text-neutral-800">{contact.name}</div>
           {contact.unread && (
-            <div className="h-5 w-5 rounded-full bg-blue-500 text-white text-xs flex items-center justify-center">
+            <div className="h-5 w-5 rounded-full bg-blue-500 text-xs flex items-center justify-center">
               {contact.unread}
             </div>
           )}
@@ -320,7 +306,7 @@ const contacts: Contact[] = [
     id: 3,
     name: "James Atkinson",
     avatar: "",
-    unread: 1,
+    unread: 3,
     pinned: true,
   },
   {

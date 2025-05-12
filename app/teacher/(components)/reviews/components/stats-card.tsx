@@ -22,10 +22,10 @@ const Statscard = () => {
                 <div key={idx} className="p-2 shadow flex justify-between space-x-17">
                     <div className="space-y-2">
                         {Stat.icon}
-                        <p className="font-medium text-xs">{Stat.title}</p>
+                        <p className="font-medium text-sm">{Stat.title}</p>
                     </div>
-                    <div className="space-y-2">
-                        {Stat.title != "Average Rating"?(<p className="text-emerald-400 font-medium">{Stat.total}</p>):( <p className="text-blue-500 font-medium">{Stat.total}</p>)}
+                    <div className="space-y-2 text-lg">
+                        {Stat.title != "Average Rating"?(<p className="text-emerald-400 font-medium">{Stat.total}</p>):( <p className="text-blue-500  font-medium">{Stat.total}</p>)}
                         {Stat.trending}
                     </div>
                 </div>

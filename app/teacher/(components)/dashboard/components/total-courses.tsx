@@ -17,8 +17,8 @@ const TotalCourses = () => {
             <div className="flex justify-between px-4">
                 {info.map((i, idx) => (
                     <div key={idx} className="flex flex-col gap-1">              
-                       <p className="text-sm">{i.title}</p>
-                        <p className={`text-xl ${i.title !== "Active Students" ? "text-center" : "text-start"} ${i.title !== "Assignments to Review" ? "" : "text-blue-600"} `}>
+                       <p className="text-xs w-20">{i.title}</p>
+                        <p className={`text-lg ${i.title !== "Active Students" ? "text-center" : "text-start"} ${i.title !== "Assignments to Review" ? "" : "text-blue-600"} `}>
                             {i.number}
                         </p>
                     </div>

@@ -37,7 +37,7 @@ export default function Sidebar() {
             )}
           >
             <Icon />
-           <span> {link.name}</span>
+           <span className="whitespace-nowrap"> {link.name}</span>
           </Link>
           )
         })}

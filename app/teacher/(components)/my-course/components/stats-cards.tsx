@@ -29,7 +29,7 @@ const StatsCards = () => {
                             <Icon />
                             <p className="text-sm font-medium">{card.name}</p>
                         </div>
-                        <p>{card.total}</p>
+                        <p className={`font-medium text-lg ${card.name !== "Total Enrollments"?"text-emerald-600":"text-blue-600"}`}>{card.total}</p>
                     </div>
                 )
             })}
