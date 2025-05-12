@@ -27,9 +27,9 @@ const  Stats = () => {
                 <div key={idx} className="flex items-start justify-between shadow px-3 py-6">
                     <div className="flex flex-col space-y-2">
                         <Icon  size={20}/>
-                        <span className="text-xs font-medium">{stat.title}</span>
+                        <span className="text-xs font-medium whitespace-nowrap">{stat.title}</span>
                     </div>
-                    <div className="text-lg">{stat.number}</div>
+                    <div className={`text-lg font-medium ${stat.title !== "Total Student" ? "text-emerald-600" : "text-blue-600"}`}>{stat.number}</div>
                 </div>
             )
         })}

@@ -1,5 +1,4 @@
 import { Image, Users } from "lucide-react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 type StudentLocation = {
   country: string
@@ -15,41 +14,30 @@ const studentData: StudentLocation[] = [
 
 export default function TopStudentLocation() {
   return (
-    <Card className="w-full border-none">
-      <CardHeader className="pb-2">
-        <CardTitle className="text-base font-medium">Top Student Location</CardTitle>
-      </CardHeader>
-      <CardContent className="space-y-4">
+    < div className="w-full border-none">
+      < div className="pb-2">
+        < div className="text-base font-medium">Top Student Location</ div>
+      </ div>
+      <div className="space-y-4">
         {studentData.map((location) => (
-          <div key={location.country} className="relative">
-            <div 
-              className="absolute inset-0 bg-green-100 rounded-md" 
-              style={{ width: `${location.percentage * 3}%` }} 
-            />
-            <div className="relative flex items-center p-2">
+          <div key={location.country} className="h-5 flex justify-between space-x-4">
+            <div className="h-full bg-gradient-to-r from-white to-[#CCEABB] rounded-md flex items-center justify-between min-w-fit px-1 space-x-3"
+              style={{ width: `${location.percentage * 3}%`, maxWidth:"100%" }} >
               <div className="flex items-center gap-2">
-                <div className="flex items-center justify-center w-6 h-6">
-                  <Image />
-                 </div>
-                <span className="text-sm text-gray-700">{location.country}</span>
+                  <Image size={14}  />
+                <span className="text-[8px] text-gray-700 whitespace-nowrap">{location.country}</span>
               </div>
-              
-              {/* This will position the icon and count at the right edge of the green background */}
-              <div className="absolute" style={{ left: `${location.percentage * 3 - 5}%` }}>
-                <div className="flex items-center gap-1">
-                  <Users className="h-4 w-4 text-gray-600" />
-                  <span className="text-sm font-medium">{location.count.toLocaleString()}</span>
+              <div className="flex items-center gap-1">
+                  <Users className="h-2 w-2 text-gray-600" />
+                  <span className="text-[6px] font-medium">{location.count.toLocaleString()}</span>
                 </div>
-              </div>
-              
-              {/* Percentage stays at the far right */}
-              <div className="ml-auto">
-                <span className="text-sm text-gray-500">{location.percentage}%</span>
+            </div>
+               <div className="h-full flex items-center">
+                <span className="text-[8px] text-gray-500">{location.percentage}%</span>
               </div>
             </div>
-          </div>
         ))}
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   )
 }
