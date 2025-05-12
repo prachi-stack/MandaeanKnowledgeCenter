@@ -1,9 +1,9 @@
 import React from 'react'
 import StatsCards from './components/stats-cards'
-import TotalCourses from '../dashboard/components/total-courses'
 import TopPerformCourse from '../dashboard/components/top-performing-courses'
-import TopStudentLocation from '../dashboard/components/top-student-loc'
 import { CourseTable } from './components/course-status/course-table'
+import TotalCourses from './components/total-courses'
+import TopRating from './components/top-rating'
 
 const page = () => {
   return (
@@ -15,7 +15,7 @@ const page = () => {
       <div className='flex-[1] flex flex-col space-y-4'>
         <TotalCourses />
         <TopPerformCourse />
-        <TopStudentLocation />
+         <TopRating />
       </div>
     </div>
   )

@@ -23,12 +23,12 @@ export default function GuideSection() {
           {guides.map((guide, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl w-full flex items-center gap-4 px-4 py-3 shadow-sm"
+              className="bg-white rounded-2xl w-full flex items-center gap-4 px-4 py-3"
             >
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-800 shrink-0">
                 <Play className="h-4 w-4 fill-white text-white" />
               </div>
-              <p className="text-sm text-[#3F3F44]">{guide.title}</p>
+              <p className="text-sm text-[#3F3F44] font-medium">{guide.title}</p>
             </div>
           ))}
         </div>

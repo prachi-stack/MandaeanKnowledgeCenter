@@ -22,7 +22,7 @@ export default function WeeklyStatistic() {
               <p className="text-sm font-medium text-lime-600">{stat.percentage}%</p>
             </div>
             <div className="flex-1">
-              <p className="text-sm font-medium text-gray-800">{stat.name}</p>
+              <p className="text-sm text-gray-800">{stat.name}</p>
               <div className="bg-gray-200 rounded ">
               <Progress className="h-2 mt-1 bg-blue-600"  style={{ width: `${stat.percentage}%` }} />
               </div>

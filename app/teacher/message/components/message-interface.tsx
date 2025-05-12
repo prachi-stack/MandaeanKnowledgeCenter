@@ -109,7 +109,6 @@ export default function MessageInterface() {
 
   return (
     <div className="md:flex">
-      {/* Sidebar */}
       <div
         className={cn(
           "w-full max-w-[280px] border-r border-gray-200 flex-shrink-0 bg-white",
@@ -266,8 +265,6 @@ export default function MessageInterface() {
               </div>
               <Button size="sm" className="bg-blue-600 text-white px-5" onClick={handleSend}>Send</Button>
               </div>
-             
-            
           </div>
         </div>
       </div>

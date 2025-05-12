@@ -22,7 +22,7 @@ export function LastSubmitted() {
 
   return (
     <div className="felx flex-col space-y-4">
-      <h2 className=" font-semibold text-[#3F3F44]">Last Submitted</h2>
+      <h2 className=" font-semibold text-lg text-[#3F3F44]">Last Submitted</h2>
       <div className="space-y-4">
         {submissions.map((submission, index) => (
           <div key={index} className="flex items-center justify-between">

@@ -17,16 +17,16 @@ const classes: classInfo[] = [
 ]
 const  Upcomingclasses = () => {
   return (
-    <div className="space-y-4"> 
+    <div className="space-y-7"> 
         <h1 className="font-semibold text-lg ">Upcoming Classes</h1>
-        <div className="px-5 space-y-4">
+        <div className="px-5 space-y-8">
              {classes.map((cls, idx) => (
                 <div key={idx} className="space-y-2">
-                    <div className="flex  space-x-4 items-center text-[#00000066]">
+                    <div className="flex space-x-4 items-center text-[#00000066]">
                     <CalendarDays strokeWidth={3} />
-                    <p className="text-sm">{cls.date}</p>
+                    <p className="">{cls.date}</p>
                     </div>
-                    <p className="text-md">{cls.title}</p>
+                    <p className="">{cls.title}</p>
                 </div>
              ))}
         </div>

@@ -33,7 +33,7 @@ export default function MostImpressiveCourses() {
       </div>
       <div className="space-y-4">
         {courses.map((course) => (
-          <div key={course.id} className="flex items-center space-x-3">
+          <div key={course.id} className="flex items-center justify-between space-x-3">
             <div className="flex items-center space-x-3">
             <div className={`w-10 h-10 rounded-md flex items-center justify-center ${course.color} flex-shrink-0`}> 
               <Image className="text-white" />

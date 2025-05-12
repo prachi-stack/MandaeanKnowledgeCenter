@@ -9,7 +9,7 @@ type courseInfo = {
 
 const course: courseInfo[]= [
     {
-        title: "Get Started with Figjam",
+        title: "Get Started with Figma",
         time: "2 months ago",
         enrolled: "2,440",
         bgcolor: ""
@@ -31,16 +31,16 @@ const course: courseInfo[]= [
 const  TopPerformCourse = () => {
   return (
     <div className="shadow rounded py-4 px-2">
-        <h1 className="mb-4">Top Performing Course</h1>
+        <h1 className="mb-4 text-lg font-semibold">Top Performing Course</h1>
         <div className="space-y-4">
             {course.map((c, idx) => (
                 <div key={idx} className="flex items-center justify-between space-y-3">
                     <div className="flex space-x-3">
                     <div className={`${c.bgcolor} flex items-center justify-center h-8 w-8 rounded-full`}>
-                        <Image />
+                        <Image size={18} />
                     </div>
                     <div className="flex flex-col text-xs space-y-1 ">
-                        <h3 className="">{c.title}</h3>
+                        <h3 className="font-medium">{c.title}</h3>
                         <p>{c.time}</p>
                     </div>
                     </div>

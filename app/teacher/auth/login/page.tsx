@@ -15,9 +15,9 @@ interface User {
 }
 
 const users: User[] = [
-  { src: "/teacher/login/Ellipse17.png", alt: "User 1" },
+  { src: "", alt: "User 1" },
   { src: "/teacher/login/Ellipse18.png", alt: "User 2" },
-  { src: "/teacher/login/Ellipse19.png", alt: "User 3" },
+  { src: "", alt: "User 3" },
   { src: "/teacher/login/Ellipse20.png", alt: "User 4" },
 ]
 
@@ -25,12 +25,12 @@ export default function LoginForm() {
   const [showPassword, setShowPassword] = useState(true)
 
   const router = useRouter()
-  
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault()
-       router.push("/teacher/dashboard")
-    }
-  
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    router.push("/teacher/dashboard")
+  }
+
   return (
     <div className="flex p-4">
       <div className="w-[50%]">
@@ -39,7 +39,7 @@ export default function LoginForm() {
       <div className="space-y-7 w-[50%] px-4">
         <div className="flex justify-end">
           <Link href="/teacher/auth/signup">
-            <Button  size="sm" className="text-white bg-blue-600 px-8 ">Register</Button>
+            <Button size="sm" className="text-white bg-blue-600 px-8 ">Register</Button>
           </Link>
         </div>
         <div className="space-y-2 pl-6 text-[#3F3F44]">
@@ -89,7 +89,7 @@ export default function LoginForm() {
               Login
             </Button>
           </form>
-         
+
           <div className="space-y-7 px-6 flex-[1]">
             <div className="space-y-3 w-30">
               <p className="text-gray-500 bg-white">Or continue with</p>
@@ -111,21 +111,27 @@ export default function LoginForm() {
             </div>
           </div>
         </div>
-        <div className="flex justify-start items-center px-6">
-            {users.map((user, index) => (
+        <div className="flex justify-start items-center px-6 mb-4">
+          {users.map((user, index) => (
+            user.src ? (
               <Image
                 key={index}
                 src={user.src}
                 alt={user.alt}
                 width={80}
                 height={80}
-                className={`rounded-full object-cover border-2 border-white ${
-                  index !== 0 ? "-ml-8" : ""
-                }`}
-               />
-            ))}
-          </div>
-
+                className={`rounded-full object-cover border-2 border-white ${index !== 0 ? "-ml-8" : ""
+                  }`}
+              />
+            ) : (
+              <div
+                key={index}
+                className={`w-20 h-20 rounded-full bg-gray-200 border-2 border-white ${index !== 0 ? "-ml-8" : ""
+                  }`}
+              />
+            )
+          ))}
+        </div>
       </div>
     </div>
   )

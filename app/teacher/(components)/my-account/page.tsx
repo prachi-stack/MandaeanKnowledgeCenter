@@ -13,7 +13,7 @@ const page = () => {
         <Profile />
          <MyCourses />
       </div>
-      <div className='flex-[1] flex flex-col space-y-7'>
+      <div className='flex-[1] flex flex-col space-y-11'>
        <Bio />
        <ProfileDetails />
        <Upcomingclasses />

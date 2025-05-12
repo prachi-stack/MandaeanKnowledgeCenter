@@ -15,7 +15,7 @@ export default function SocialAccounts() {
                         <span className="text-xs">Facebook</span>
                         </div>  
                         <div className="">
-                            <Button size="sm" className="bg-blue-600 text-white rounded-md px-5 py-1 text-xs font-medium">Link</Button>
+                            <Button size="sm" className="bg-blue-600 text-white rounded-md px-5 text-xs font-medium">Link</Button>
                         </div>
                     </div>
 
@@ -25,7 +25,7 @@ export default function SocialAccounts() {
                         <span className="text-xs">Instagram</span>
                         </div>  
                         <div className="">
-                            <Button size="sm" className="rounded-md px-5 py-1 text-xs font-medium">samanthawill<X /></Button>
+                            <Button size="sm" className="rounded-md px-5 text-xs font-medium">samanthawill<X /></Button>
                         </div>
                     </div>
 

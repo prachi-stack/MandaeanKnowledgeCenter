@@ -32,8 +32,8 @@ export function MultiSegmentProgress({
   const center = size / 2
   
   // Calculate total value for percentage calculations
-  const totalValue = segments.reduce((acc, segment) => acc + segment.value, 0)
-  
+  const totalValue = 100
+
   // Calculate start and end positions for each segment
   let currentAngle = 0
   const segmentsWithAngles = segments.map(segment => {

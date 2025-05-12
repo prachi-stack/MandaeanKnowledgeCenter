@@ -1,6 +1,5 @@
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 export default function OtherInfo() {
@@ -58,9 +57,9 @@ export default function OtherInfo() {
           </Select>
         </div>
 
-        <div className="space-y-2 col-span-full">
+        <div className="space-y-2 text-sm col-span-full">
          <h1>About Info</h1>
-         <p className="bg-gray-50 p-2 text-sm text-gray-400 rounded-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis varius arcu eget tincidunt lobortis. Nam placerat neque sed risus mollis, id mollis nisi sodales. Vestibulum dapibus quam id mauris tincidunt, laoreet auctor dui faucibus.</p>
+         <p className="bg-gray-100 p-2 text-gray-400 rounded-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis varius arcu eget tincidunt lobortis. Nam placerat neque sed risus mollis, id mollis nisi sodales. Vestibulum dapibus quam id mauris tincidunt, laoreet auctor dui faucibus.</p>
         </div>
       </div>
     </div>

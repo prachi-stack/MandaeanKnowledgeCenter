@@ -27,18 +27,18 @@ export default function TopCourses() {
 
     return (
         <div className="rounded-xl bg-white p-4 ">
-            <h2 className="text-lg font-medium mb-4">Top Courses</h2>
+            <h2 className="text-lg text-neutral-700 font-medium mb-4">Top Courses</h2>
             <div className="space-y-8">
                 {courses.map((course) => (
                     <div key={course.id} className="flex items-center justify-between">
                         <div className="flex items-center space-x-3">
                             <div className={`w-9 h-10 rounded-lg ${course.color}`} />
-                            <h4 className="text-xs font-medium w-35">{course.title}</h4>
+                            <h4 className="text-sm font-medium text-neutral-700 w-35">{course.title}</h4>
                         </div>
                         <div className="flex items-center space-x-9">
-                            <span className="text-xs font-medium">{course.students}</span>
+                            <span className="text-sm">{course.students}</span>
                             <div className="flex items-center">
-                                <span className="text-xs mr-1">{course.rating}</span>
+                                <span className="text-sm mr-1">{course.rating}</span>
                                 <Star className="h-3 w-3 fill-yellow-400 text-yellow-400" />
                             </div>
                         </div>
