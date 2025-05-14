@@ -6,7 +6,7 @@ const Topbar = () => {
     <div className="flex justify-between items-center p-4 space-x-8">
       <div className="flex flex-[2] justify-between">
       <div className="">
-        <h1 className="text-lg">Good Morning, <span className="font-medium">Samantha</span></h1>
+        <h1 className="text-xl font-thin">Good Morning, <span className="font-medium">Samantha</span></h1>
       </div>
       <div>
         <Button className="text-white bg-blue-600">
@@ -15,15 +15,15 @@ const Topbar = () => {
         </Button>
       </div>
       </div>
-      <div className="flex flex-[1] justify-between items-center ">
-        <div className="flex items-center space-x-2">
-          <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-200">
+      <div className="flex flex-[1] justify-between items-center">
+        <div className="flex items-center space-x-2 text-gray-910 ">
+          <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-40">
             <Image />
           </div>
           <div>
-            <div className="text-sm">
+            <div className="">
               <h1 className="font-medium">Samantha</h1>
-              <p>UI/UX Designer</p>
+              <p className="text-sm">UI/UX Designer</p>
             </div>
           </div>
         </div>

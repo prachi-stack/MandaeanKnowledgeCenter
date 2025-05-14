@@ -26,7 +26,7 @@ export default function DataTableColumnHeader<TData, TValue>({
   className,
 }: DataTableColumnHeaderProps<TData, TValue>) {
   if (!column.getCanSort()) {
-    return <div className={cn(className)}>{title}</div>
+    return <div className={cn(className="text-gray-910/50")}>{title}</div>
   }
 
   return (
@@ -34,13 +34,13 @@ export default function DataTableColumnHeader<TData, TValue>({
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="ghost" size="sm" className="-ml-3 h-8 data-[state=open]:bg-accent">
-            <span className="font-normal">{title}</span>
+            <span className="font-normal text-gray-910/50">{title}</span>
             {column.getIsSorted() === "desc" ? (
-              <ArrowDownIcon className="ml-2 h-4 w-4" />
+              <ArrowDownIcon className="ml-2 h-4 w-4 text-gray-910/50" />
             ) : column.getIsSorted() === "asc" ? (
-              <ArrowUpIcon className="ml-2 h-4 w-4" />
+              <ArrowUpIcon className="ml-2 h-4 w-4 text-gray-910/50" />
             ) : (
-              <CaretSortIcon className="ml-2 h-4 w-4" />
+              <CaretSortIcon className="ml-2 h-4 w-4 text-gray-910/50" />
             )}
           </Button>
         </DropdownMenuTrigger>

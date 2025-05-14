@@ -20,16 +20,16 @@ interface DataTablePaginationProps<TData> {
 export default function DataTablePagination<TData>({ table }: DataTablePaginationProps<TData>) {
   return (
     <div className="flex items-center justify-between px-4 py-4">
-      <div className="flex-1 text-sm text-muted-foreground">
+      <div className="flex-1 text-sm">
         <div className="flex items-center space-x-2">
-          <p>View</p>
+          <p className="text-gray-910 font-thin">View</p>
           <Select
             value={`${table.getState().pagination.pageSize}`}
             onValueChange={(value: any) => {
               table.setPageSize(Number(value))
             }}
           >
-            <SelectTrigger className="border-none shadow-none h-8">
+            <SelectTrigger className="border-none shadow-none h-8 text-gray-910">
               <SelectValue placeholder={table.getState().pagination.pageSize} />
             </SelectTrigger>
             <SelectContent side="top">
@@ -40,7 +40,7 @@ export default function DataTablePagination<TData>({ table }: DataTablePaginatio
               ))}
             </SelectContent>
           </Select>
-          <p className="text-sm">reviews per page</p>
+          <p className="text-sm text-gray-910 font-thin">reviews per page</p>
         </div>
       </div>
 
@@ -86,7 +86,7 @@ export default function DataTablePagination<TData>({ table }: DataTablePaginatio
                   )}
                   <Button
                     variant={currentPage === pageNumber ? "default" : "ghost"}
-                    className="h-8 w-8 p-0"
+                    className="h-8 w-8 p-0 shadow-none text-gray-910"
                     onClick={() => table.setPageIndex(pageNumber - 1)}
                   >
                     {pageNumber}

@@ -92,11 +92,11 @@ export default function CreateQuiz() {
     <div className="space-y-8">
       {questions.map((question, index) => (
         <div key={question.id} className="space-y-6">
-          <h2 className="text-lg font-medium">Question {index + 1}</h2>
+          <h2 className="text-lg font-medium text-gray-910">Question {index + 1}</h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 text-gray-910 gap-6">
             <div>
-              <Label htmlFor={`title-${question.id}`} className="text-sm text-stone-800 font-normal mb-2">
+              <Label htmlFor={`title-${question.id}`} className="text-sm font-normal mb-2">
                 Title
               </Label>
               <Input
@@ -104,16 +104,16 @@ export default function CreateQuiz() {
                 placeholder="Type Here"
                 value={question.title}
                 onChange={(e) => updateQuestionTitle(question.id, e.target.value)}
-                className="bg-[#F6F6F6]"
+                className="bg-gray-40 placeholder:text-transparent-30"
               />
             </div>
 
             <div>
-              <Label htmlFor={`correct-option-${question.id}`} className="text-sm text-stone-800 font-normal mb-2">
+              <Label htmlFor={`correct-option-${question.id}`} className="text-sm font-normal mb-2">
                 Select Correct Option
               </Label>
               <Select value={question.correctOption} onValueChange={(value) => updateCorrectOption(question.id, value)}>
-                <SelectTrigger id={`correct-option-${question.id}`} className="bg-[#F6F6F6] text-stone-400 border-none shadow-none w-full">
+                <SelectTrigger id={`correct-option-${question.id}`} className="bg-gray-40 text-transparent-30 border-none shadow-none w-full">
                   <SelectValue placeholder="Please Select" />
                 </SelectTrigger>
                 <SelectContent>
@@ -129,7 +129,7 @@ export default function CreateQuiz() {
 
           <div className="mt-6">
             <div className="flex justify-between items-center mb-4">
-              <h3 className="text-lg font-medium">Options</h3>
+              <h3 className="text-lg font-medium text-gray-910">Options</h3>
               <Button size="sm" onClick={addQuestion} className="bg-blue-600 hover:bg-blue-700 text-xs text-white">
                 <Plus className="h-4 w-4" />
                 Add Question
@@ -146,7 +146,7 @@ export default function CreateQuiz() {
                     placeholder="Type answer"
                     value={option.value}
                     onChange={(e) => updateOptionValue(question.id, option.id, e.target.value)}
-                    className="bg-[#F6F6F6]"
+                    className="bg-gray-40 placeholder:text-transparent-30"
                   />
                 </div>
               ))}

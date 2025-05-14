@@ -1,18 +1,18 @@
-import { Play } from 'lucide-react'
+ import { Play } from 'lucide-react'
 interface GuideItem {
   title: string
 }
 
-export default function GuideSection() {
+export default function QuizGuideSection() {
     const guides: GuideItem[] = [
       {
-        title: "How to Upload Your Course Correctly",
+        title: "How to Upload Your Quiz Correctly",
       },
       {
-        title: "The Complete Way to Organize Your Course Content",
+        title: "The Complete Way to Organize Your Quiz Content",
       },
       {
-        title: "How to Get More Impressions on Your Course",
+        title: "How to Add More Quiz on Your Course",
       },
     ];
   

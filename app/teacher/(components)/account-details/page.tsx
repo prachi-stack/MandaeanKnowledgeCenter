@@ -12,7 +12,7 @@ const page = () => {
          <General />
          <OtherInfo />
       </div>
-      <div className='flex-[1] flex flex-col space-y-4'>
+      <div className='flex-[1] flex flex-col space-y-10'>
          <EngagementRate />
          <SocialAccounts />
          <Settings />

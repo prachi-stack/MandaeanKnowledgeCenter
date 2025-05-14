@@ -33,9 +33,9 @@ export default function ScheduleClasses() {
   return (
     <div className="w-full rounded-lg">
       <div className="flex items-center justify-between mb-3">
-        <h1 className="text-lg text-neutral-800 font-semibold">Scheduled Classes</h1>
-        <Select defaultValue="today">
-      <SelectTrigger className="border-none text-gray-600">
+        <h1 className="text-lg text-gray-910 font-semibold">Scheduled Classes</h1>
+        <Select defaultValue="today" >
+      <SelectTrigger className="border-none text-transparent-70">
         <SelectValue placeholder="select day" />
       </SelectTrigger>
       <SelectContent>
@@ -47,8 +47,8 @@ export default function ScheduleClasses() {
     </Select>
        </div>
       <div className="flex items-center gap-2 mb-4">
-        <CalendarIcon className="h-5 w-5 text-green-500" />
-        <h2 className="text-lg font-medium text-neutral-800">
+        <CalendarIcon className="h-5 w-5 text-green-10" />
+        <h2 className="text-lg font-medium text-gray-910">
           October 13-18, 2021
         </h2>
       </div>
@@ -56,7 +56,7 @@ export default function ScheduleClasses() {
       {/* Days header */}
       <div className="grid grid-cols-7 text-center text-sm font-medium pb-2">
         {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
-          <div key={day}>{day}</div>
+          <div key={day} className="text-gray-910">{day}</div>
         ))}
       </div>
 

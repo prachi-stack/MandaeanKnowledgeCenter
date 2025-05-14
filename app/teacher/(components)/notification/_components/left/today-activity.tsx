@@ -18,7 +18,7 @@ type ActivityItem = {
 const todayActivities: ActivityItem[] = [
   {
     id: "1",
-    avatar: { color: "bg-gray-700", icon: "user", iconColor: "bg-emerald-500" },
+    avatar: { color: "bg-gray-910", icon: "user", iconColor: "bg-emerald-500" },
     user: "Nicolas Bekker",
     action: "purchased",
     course: "Designing with User Centered Approach",
@@ -43,7 +43,7 @@ const todayActivities: ActivityItem[] = [
   },
   {
     id: "4",
-    avatar: { color: "bg-gray-700", icon: "dot", iconColor: "bg-blue-500" },
+    avatar: { color: "bg-gray-910", icon: "dot", iconColor: "bg-blue-500" },
     user: "Isabelle Octav",
     action: "reviewed",
     course: "UI/UX Prototyping with Proto.io",
@@ -56,7 +56,7 @@ export default function TodayActivity() {
   return (
     < div>
       < div>
-        <h1 className="mb-6 font-semibold text-neutral-800 text-lg">Today</h1 >
+        <h1 className="mb-6 font-semibold text-gray-910 text-lg">Today</h1 >
       </ div >
       < div  className="space-y-6">
         {todayActivities.map((activity) => (
@@ -82,14 +82,14 @@ export default function TodayActivity() {
                   ))}
                 </div>
               )}
-              <p className="text-xs xl:text-sm max-w-lg">
-                <span className="text-neutral-700">{activity.user} {activity.action}{" "}</span> 
-                <span className="font-medium text-neutral-700">{activity.course}</span>
+              <p className="text-xs xl:text-sm max-w-lg text-gray-910">
+                <span className="">{activity.user} {activity.action}{" "}</span> 
+                <span className="font-medium">{activity.course}</span>
                 {activity.comment && <span> "{activity.comment}"</span>}
               </p>
             </div>
             </div>
-            <div className="text-xs xl:text-sm text-gray-400 whitespace-nowrap">{activity.time}</div>
+            <div className="text-xs xl:text-sm text-gray-910/40 whitespace-nowrap">{activity.time}</div>
           </div>
           
         ))}

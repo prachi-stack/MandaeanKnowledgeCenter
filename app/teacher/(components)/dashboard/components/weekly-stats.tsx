@@ -1,4 +1,4 @@
-import { Square, Star } from "lucide-react";
+import { Star } from "lucide-react";
 
 interface Course {
   bgcolor: string;
@@ -9,7 +9,7 @@ interface Course {
 
 const courses: Course[] = [
   {
-    bgcolor: "bg-stone-700",
+    bgcolor: "bg-gray-910",
     title: "UI/UX Prototyping with Proto.io",
     enrolled: 10,
     rating: 4.5
@@ -30,12 +30,12 @@ const courses: Course[] = [
 
 const WeeklyStats = () => {
   return (
-    <div className="bg-white p-4 rounded-xl">
+    <div className="bg-white p-4 rounded-xl text-gray-910">
       <h1 className="text-lg font-semibold mb-4">Weekly Sales Stats</h1>
       <div>
-         <div className="flex justify-between items-center bg-gray-100 p-3 rounded-md mb-2">
-          <p className="text-sm font-medium">Course</p>
-          <div className="flex gap-8 text-sm font-medium">
+         <div className="text-gray-910/50 flex justify-between items-center bg-gray-40 p-3 rounded-md mb-2">
+          <p className="text-sm ">Course</p>
+          <div className="flex gap-8 text-sm">
             <p>Enrolled</p>
             <p>Ratings</p>
           </div>

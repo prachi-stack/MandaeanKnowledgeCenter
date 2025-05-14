@@ -14,9 +14,9 @@ const studentData: StudentLocation[] = [
 
 export default function TopStudentLocation() {
   return (
-    < div className="w-full border-none">
+    < div className="w-full border-none text-gray-910">
       < div className="pb-2">
-        < div className="text-base font-medium">Top Student Location</ div>
+        < div className="text-lg font-medium">Top Student Location</ div>
       </ div>
       <div className="space-y-4">
         {studentData.map((location) => (
@@ -25,15 +25,15 @@ export default function TopStudentLocation() {
               style={{ width: `${location.percentage * 3}%`, maxWidth:"100%" }} >
               <div className="flex items-center gap-2">
                   <Image size={14}  />
-                <span className="text-[10px] text-gray-700 whitespace-nowrap">{location.country}</span>
+                <span className="text-[10px] whitespace-nowrap">{location.country}</span>
               </div>
               <div className="flex items-center gap-1">
-                  <Users className="h-2 w-3 text-gray-600" />
+                  <Users className="h-2 w-3" />
                   <span className="text-[8px] font-medium">{location.count.toLocaleString()}</span>
                 </div>
             </div>
                <div className="h-full flex items-center">
-                <span className="text-[10px] text-gray-500">{location.percentage}%</span>
+                <span className="text-[10px] text-gray-910/40">{location.percentage}%</span>
               </div>
             </div>
         ))}

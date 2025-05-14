@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button"
-import GuideSection from "../upload-course/components/rightbar/guides"
 import TeacherHandbook from "../upload-course/components/rightbar/teacher-handbook"
 import CreateQuiz from "./_components/create-quiz"
 import { Plus } from "lucide-react"
+import QuizGuideSection from "./_components/quiz-guide-section"
 
  const page = () => {
      return (
@@ -14,7 +14,7 @@ import { Plus } from "lucide-react"
              </div>
          </div>
          <div className='flex-[1] space-y-10'>
-            <GuideSection />
+            <QuizGuideSection />
             <TeacherHandbook />
         </div>
        </div>

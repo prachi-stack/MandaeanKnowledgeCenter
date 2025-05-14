@@ -15,16 +15,16 @@ const stats: Stat[] = [
 
 export default function StatsOverview() {
   return (
-    <div className="flex justify-between mb-8">
+    <div className="flex justify-between mb-8 space-x-4">
       {stats.map((stat, idx) => {
         const Icon = stat.icon
         return (
-          <div key={idx} className="flex justify-between items-start shadow px-3 py-1">
-            <div className="space-y-3">
+          <div key={idx} className="flex justify-between items-start shadow px-3 py-1 w-full">
+            <div className="space-y-3 text-gray-910">
               <Icon size={25} />
-              <p className="text-sm font-medium w-28">{stat.label}</p>
+              <p className="text-sm xl:text-base font-medium w-28 xl:w-full">{stat.label}</p>
             </div>
-            <h3 className={`text-lg font-medium ${stat.color}`}>{stat.value}</h3>
+            <h3 className={`text-xl font-medium ${stat.color}`}>{stat.value}</h3>
           </div>
         )
       })}

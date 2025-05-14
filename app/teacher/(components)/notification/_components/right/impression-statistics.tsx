@@ -14,7 +14,7 @@ export default function ImpressionStatistics() {
     return (
         <div className="flex flex-col space-y-6">
             <div className="flex justify-between items-center">
-                <h3 className="text-lg font-semibold text-neutral-800">Impression Statistic</h3>
+                <h3 className="text-lg font-semibold text-gray-910">Impression Statistic</h3>
                 <div className="flex items-center text-xs space-x-2">
                     <div className="flex items-center space-x-1">
                         <div className="w-2 h-2 rounded-full bg-emerald-500"></div>

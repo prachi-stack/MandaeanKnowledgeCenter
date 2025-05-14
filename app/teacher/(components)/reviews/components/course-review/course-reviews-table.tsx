@@ -1,20 +1,20 @@
- "use client"
+"use client"
 
 import { useState } from "react"
 import type { ColumnDef, ColumnFiltersState, PaginationState, SortingState } from "@tanstack/react-table"
-import { Star, MoreHorizontal, Image, Funnel } from "lucide-react"
+import { Star, MoreHorizontal, Image, Funnel, ChevronDown } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import DataTable from "./data-table"
-import DataTableColumnHeader from "./data-table-column-header" 
- import { cn } from "@/lib/utils"
+import DataTableColumnHeader from "./data-table-column-header"
+import { cn } from "@/lib/utils"
 
 // Define the review type
 type CourseReview = {
   id: string
   courseName: string
-   studentName: string
+  studentName: string
   studentLocation: string
   rating: number
   reviewText: string
@@ -66,12 +66,20 @@ export const columns: ColumnDef<CourseReview>[] = [
     accessorKey: "courseName",
     header: ({ column }) => <DataTableColumnHeader column={column} title="Course Name" />,
     cell: ({ row }) => {
+      const bgColors = [
+        "bg-gray-910", 
+        "bg-emerald-500",
+        "bg-blue-600",
+        "bg-emerald-500",
+      ]
+      const colorClass = bgColors[row.index % bgColors.length]
+
       return (
         <div className="flex items-center gap-2 w-45">
-          <div className="h-11 w-11 rounded bg-slate-200 flex-shrink-0 flex items-center justify-center">
-             <Image size={20} />
+          <div className={cn("h-11 w-11 rounded flex-shrink-0 flex items-center justify-center text-white", colorClass)}>
+            <Image size={20} />
           </div>
-          <span className="text-xs font-medium whitespace-normal">{row.original.courseName}</span>
+          <span className="text-xs font-medium whitespace-normal text-gray-910">{row.original.courseName}</span>
         </div>
       )
     },
@@ -84,8 +92,8 @@ export const columns: ColumnDef<CourseReview>[] = [
     cell: ({ row }) => {
       return (
         <div className="flex flex-col w-40">
-          <span className="text-xs">{row.original.studentName}</span>
-          <span className="text-xs text-gray-500">{row.original.studentLocation}</span>
+          <span className="text-xs text-gray-910">{row.original.studentName}</span>
+          <span className="text-xs text-gray-910/50">{row.original.studentLocation}</span>
         </div>
       )
     },
@@ -106,7 +114,7 @@ export const columns: ColumnDef<CourseReview>[] = [
               />
             ))}
           </div>
-          <p className="text-xs text-gray-500 whitespace-normal">{row.original.reviewText}</p>
+          <p className="text-xs text-gray-910/50 whitespace-normal">{row.original.reviewText}</p>
         </div>
       )
     },
@@ -122,7 +130,7 @@ export const columns: ColumnDef<CourseReview>[] = [
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" className="h-8 w-8 p-0">
                 <span className="sr-only">Open menu</span>
-                <MoreHorizontal className="h-4 w-4" />
+                <MoreHorizontal className="h-4 w-4 text-transparent-30" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
@@ -149,14 +157,15 @@ export default function CourseReviewsTable() {
     <div className="">
       <div className="rounded-md">
         <div className="flex items-center justify-between py-4">
-          <h2 className="text-lg font-semibold">Course Reviews</h2>
-          <div className="flex items-center gap-2">
-            <Button variant="outline" size="sm" className="h-8 text-gray-400 font-normal border-none">
+          <h2 className="text-lg font-semibold text-gray-910">Course Reviews</h2>
+          <div className="flex items-center gap-2 text-transparent-70">
+            <Button variant="outline" size="sm" className="h-8 text-gray-400 shadow-none font-normal border-none">
               <Funnel />
               <span>Filter Order</span>
             </Button>
-            <Button variant="outline" size="sm" className="h-8 text-gray-400 font-normal border-none">
+            <Button variant="outline" size="sm" className="shadow-none h-8 text-gray-400 font-normal border-none">
               <span>Last 12 Month</span>
+              <ChevronDown />
             </Button>
           </div>
         </div>
@@ -169,7 +178,7 @@ export default function CourseReviewsTable() {
           setPagination={setPagination}
           columnFilters={columnFilters}
           setColumnFilters={setColumnFilters}
-         />
+        />
       </div>
     </div>
   )

@@ -24,7 +24,7 @@ const yesterdayActivities: ActivityItem[] = [
   },
   {
     id: "2",
-    avatar: { color: "bg-gray-700", icon: "user", iconColor: "bg-emerald-500" },
+    avatar: { color: "bg-gray-910", icon: "user", iconColor: "bg-emerald-500" },
     user: "Alice Brooklyn",
     action: "purchased",
     course: "UI/UX Prototyping with Proto.io",
@@ -44,7 +44,7 @@ export default function YesterdayActivity() {
   return (
     <div>
       <div>
-        <h1 className="mb-6 font-semibold text-neutral-800 text-lg">Yesterday</h1>
+        <h1 className="mb-6 font-semibold text-gray-910 text-lg">Yesterday</h1>
       </div>
       <div className="space-y-6">
         {yesterdayActivities.map((activity) => (
@@ -59,13 +59,13 @@ export default function YesterdayActivity() {
                 ></div>
               </div>
               <div className="text-xs xl:text-sm">
-                <p className="max-w-lg">
-                  <span className="text-neutral-700">{activity.user} {activity.action}{" "}</span>
-                  <span className="font-medium text-neutral-700">{activity.course}</span>
+                <p className="max-w-lg text-gray-910">
+                  <span className="">{activity.user} {activity.action}{" "}</span>
+                  <span className="font-medium">{activity.course}</span>
                 </p>
               </div>
             </div>
-            <div className="text-xs xl:text-sm text-gray-400 whitespace-nowrap">{activity.time}</div>
+            <div className="text-xs xl:text-sm text-gray-910/40 whitespace-nowrap">{activity.time}</div>
           </div>
         ))}
       </div>

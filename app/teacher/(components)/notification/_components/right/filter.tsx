@@ -16,11 +16,8 @@ const checkboxes: CheckboxOption[] = [
 
 export default function FilterSection() {
     return (
-        <div className="rounded-lg p-4">
-            <div className="mb-4">
-                <h2 className="text-lg text-neutral-800 font-semibold">Filter</h2>
-            </div>
-
+        <div className="rounded-lg p-4 bg-gray-5 ">
+            <h2 className="text-lg text-gray-910 font-semibold mb-4">Filter</h2>
             <div className="grid grid-cols-2 gap-4 mb-6">
                 {checkboxes.map((item) => (
                     <div key={item.id} className="flex items-center space-x-2">
@@ -29,24 +26,24 @@ export default function FilterSection() {
                             defaultChecked
                             className="bg-emerald-500 border-none text-white "
                         />
-                        <Label htmlFor={item.id}>{item.label}</Label>
+                        <Label htmlFor={item.id} className="text-gray-910">{item.label}</Label>
                     </div>
                 ))}
             </div>
 
             <div>
-                <h3 className="text-lg font-semibold text-neutral-800 mb-3">From</h3>
+                <h3 className="text-lg font-semibold text-gray-910 mb-3">From</h3>
                 <RadioGroup defaultValue="everyone" className="flex space-x-12">
                     <div className="flex items-center space-x-2">
                         <RadioGroupItem
                             value="everyone"
                             id="everyone"
-                            className="text-emerald-500 border-2 border-emerald-500"
+                            className="text-emerald-500 border-2 border-emerald-500 data-[state=checked]:after:bg-emerald-500"
                         />
                         <Label htmlFor="everyone">Everyone</Label>
                     </div>
                     <div className="flex items-center space-x-2">
-                        <RadioGroupItem value="followers" id="followers" className="border-2 border-gray-400"/>
+                        <RadioGroupItem value="followers" id="followers" className="border-2 border-gray-400" />
                         <Label htmlFor="followers">Followers</Label>
                     </div>
                 </RadioGroup>

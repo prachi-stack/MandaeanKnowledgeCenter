@@ -23,13 +23,13 @@ export default function ProfileVisitor() {
     return (
         <div className="rounded-xl">
             <div className="flex items-center justify-between pb-6">
-                <h2 className="text-lg font-medium">Profile Visitor</h2>
+                <h2 className="text-lg font-medium text-gray-910">Profile Visitor</h2>
                 <div className="flex items-center gap-2">
                     <div className="w-2 h-2 rounded-full bg-emerald-500" />
-                    <span className="text-sm text-gray-500">Course Visit</span>
+                    <span className="text-sm text-gray-910">Course Visit</span>
                 </div>
                 <Select defaultValue="last12">
-                    <SelectTrigger className="h-8 border-none text-sm text-gray-500">
+                    <SelectTrigger className="h-8 border-none text-sm text-gray-910">
                         <SelectValue placeholder="Period" />
                     </SelectTrigger>
                     <SelectContent>

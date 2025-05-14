@@ -7,7 +7,7 @@ export default function TopCourses() {
             title: "UI/UX Prototyping with Proto.io",
             students: 10,
             rating: 4.5,
-            color: "bg-gray-800",
+            color: "bg-gray-910",
         },
         {
             id: 2,
@@ -21,7 +21,7 @@ export default function TopCourses() {
             title: "How to Conduct User Research from Scratch",
             students: 12,
             rating: 4.5,
-            color: "bg-blue-500",
+            color: "bg-blue-600",
         },
     ]
 
@@ -33,13 +33,13 @@ export default function TopCourses() {
                     <div key={course.id} className="flex items-center justify-between">
                         <div className="flex items-center space-x-3">
                             <div className={`w-9 h-10 rounded-lg ${course.color}`} />
-                            <h4 className="text-sm font-medium text-neutral-700 w-35">{course.title}</h4>
+                            <h4 className="text-sm font-medium text-gray-910 w-35">{course.title}</h4>
                         </div>
                         <div className="flex items-center space-x-9">
-                            <span className="text-sm">{course.students}</span>
+                            <span className="text-sm text-gray-910">{course.students}</span>
                             <div className="flex items-center">
-                                <span className="text-sm mr-1">{course.rating}</span>
-                                <Star className="h-3 w-3 fill-yellow-400 text-yellow-400" />
+                                <span className="text-sm mr-1 text-gray-910">{course.rating}</span>
+                                <Star className="h-3 w-3 fill-golden-450 text-golden-450" />
                             </div>
                         </div>
                     </div>
