@@ -1,8 +1,6 @@
-import { Button } from "@/components/ui/button";
-import Homepage from "./home/page";
-
+import BeforeLogin from "./auth/before-login/page"
 export default function Home() {
   return <div>
-    <Homepage />
+    <BeforeLogin />
   </div>
 }
